@@ -5,13 +5,13 @@ For Conversion of Excel to Json visit http://beautifytools.com/excel-to-json-con
 For every row add unique field Id with coloumn name feildId
 
 rename titles of excel to
-  ..* fieldId
-  ..* validation
-  ..* answer
-  ..* khmerLabel
-  ..* question
-  ..* khmerAnswer
-  ..* number
+  * fieldId
+  * validation
+  * answer
+  * khmerLabel
+  * question
+  * khmerAnswer
+  * number
   
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
 
