@@ -15,6 +15,7 @@ export class AppComponent {
   count: number;
   models: any = {};
   jsonLabel: Object = {};
+  splitWith: string;
 
   downLoadFile(data: any, type: string) {
     const blob = new Blob([data], { type: type.toString() });
@@ -84,7 +85,7 @@ export class AppComponent {
   }
 
   private writeValidation(validation: string) {
-    const validationElements = this.split(validation, '\r\n');
+    const validationElements = this.split(validation, this.splitWith);
     validationElements.forEach((ele) => {
       this.writeValidationCondition(ele);
     });
@@ -109,12 +110,12 @@ export class AppComponent {
   }
 
   private splitAndReturnAnswers(component: YMLComponent) {
-      const optionId = this.split(component.answer, '\r\n');
+      const optionId = this.split(component.answer, this.splitWith);
       return [
-        this.arrayToJSON(this.split(component.answer, '\r\n').map((ele, index) => {
+        this.arrayToJSON(this.split(component.answer, this.splitWith).map((ele, index) => {
           return this.getJson(ele, optionId[index] === 1 ? undefined : optionId[index].split('.').slice(1).join(''));
         })),
-        this.arrayToJSON(this.split(component.khmerAnswer, '\r\n').map((ele, index) => {
+        this.arrayToJSON(this.split(component.khmerAnswer, this.splitWith).map((ele, index) => {
           return this.getJson(ele,optionId[index] === 1 ? undefined : optionId[index].split('.').slice(1).join(''));
         }))
       ];

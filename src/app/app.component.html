@@ -1,3 +1,7 @@
 PRIMARY MODEL: <input [(ngModel)]="model" required="required"/> <br><br>
+Pattern to Split: <input [(ngModel)]="splitWith" required="required">
 JSON : <br><textarea [(ngModel)]="json" required="required" rows="50" cols="150"> </textarea><br><br>
 <button (click)="generateYML()"> Convert </button>
+<br><br>
+JSON: <br>
+{{ jsonLabel | json }}
