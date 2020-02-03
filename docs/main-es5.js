@@ -650,8 +650,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
 
-    var routes = [];
+
+    var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./app.component */
+    "./src/app/app.component.ts");
+
+    var routes = [{
+      path: '**',
+      component: _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]
+    }];
 
     var AppRoutingModule = function AppRoutingModule() {
       _classCallCheck(this, AppRoutingModule);
