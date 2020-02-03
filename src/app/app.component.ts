@@ -44,7 +44,6 @@ export class AppComponent {
 
   private pushParent(component: YMLComponent) {
     const ele = component.number.split('.');
-    component.fieldId = 'fieldid';
     this.models[component.number] = this.model + '.' + component.fieldId;
     if (ele.length > 1) {
       this.parents[component.number] = this.models[ele[0]];
@@ -53,7 +52,6 @@ export class AppComponent {
 
   private convertComponentToYML(component: YMLComponent) {
     this.writeHeading();
-    component.fieldId = 'fieldId' + component.number;
     component.fieldId && this.writeFieldId(component.fieldId);
     component.validation && this.writeValidation(component.validation);
     this.writeModel(component.fieldId);
